@@ -12,8 +12,10 @@ export class S3Connection {
   public getS3Client() {
     if (this.client) return this.client;
 
-    return new S3({
+    this.client = new S3({
       region: this.config.region,
     });
+
+    return this.client;
   }
 }
