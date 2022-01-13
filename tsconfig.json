@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "allowJs": true,
+    "outDir": "./dist/",
+    "rootDirs": [
+      "./src/",
+      "./tests/"
+    ],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "removeComments": true,
+    "alwaysStrict": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "@domain/*": ["src/domain/*"],
+      "@implementation/*": ["src/implementation/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@presentation/*": ["src/presentation/*"],
+      "@application/*": ["src/application/*"],
+      "@validation/*": ["src/validation/*"]
+    }
+  },
+  "include": [
+    "./src/**/*",
+    "./tests/**/*"
+  ]
+}

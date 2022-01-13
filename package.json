@@ -1,0 +1,32 @@
+{
+  "name": "supermarkets-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gabriel Alves <l.luis.gabriel@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "./build.sh"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
+  },
+  "_moduleAliases": {
+    "@domain": "./dist/domain",
+    "@implementation": "./dist/implementation",
+    "@infrastructure": "./dist/infrastructure",
+    "@presentation": "./dist/presentation",
+    "@application": "./dist/application",
+    "@validation": "./dist/validation"
+  }
+}
