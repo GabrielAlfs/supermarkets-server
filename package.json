@@ -6,12 +6,18 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./dist/index.js",
-    "build": "./build.sh"
+    "build": "./build.sh",
+    "commit": "git-cz"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/multer": "^1.4.7",
     "@types/node": "^17.0.8",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
@@ -21,6 +27,17 @@
     "prettier": "^2.5.1",
     "typescript": "^4.5.4"
   },
+  "dependencies": {
+    "aws-sdk": "^2.1055.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
+    "module-alias": "^2.2.2",
+    "mongoose": "^6.1.6",
+    "multer": "^1.4.4",
+    "uuid": "^8.3.2",
+    "winston": "^3.4.0"
+  },
   "_moduleAliases": {
     "@domain": "./dist/domain",
     "@implementation": "./dist/implementation",
@@ -28,5 +45,10 @@
     "@presentation": "./dist/presentation",
     "@application": "./dist/application",
     "@validation": "./dist/validation"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
