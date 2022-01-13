@@ -42,7 +42,7 @@ An interpretation of the Clean Architecture proposed by Robert C. Martin was use
   state: string;
 ```
 
-### Casos de uso
+### Use Cases
 
 * GetSuperMarketList
 * GetSuperMarket
