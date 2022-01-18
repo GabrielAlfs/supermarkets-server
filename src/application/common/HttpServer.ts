@@ -5,10 +5,12 @@ import { serverLogger } from './Logger';
 export class HttpServer {
   public static server: Server;
 
+  private static port = process.env.SERVER_PORT || process.env.PORT;
+
   private static async createHttpServer(): Promise<void> {
     const expressApp = await createExpressApp();
 
-    expressApp.set('port', process.env.SERVER_PORT);
+    expressApp.set('port', HttpServer.port);
 
     this.server = createServer(expressApp);
   }
@@ -17,9 +19,9 @@ export class HttpServer {
     await this.createHttpServer();
 
     serverLogger.info('[http] Starting server...');
-    this.server.listen(process.env.SERVER_PORT, () => {
+    this.server.listen(HttpServer.port, () => {
       serverLogger.info(
-        `[http] Server started and listening on port ${process.env.SERVER_PORT}`,
+        `[http] Server started and listening on port ${HttpServer.port}`,
       );
     });
   }
