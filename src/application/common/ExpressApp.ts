@@ -18,6 +18,12 @@ export const createExpressApp = async (): Promise<Express> => {
 
   app.use(requestLogger);
 
+  app.get('/', (request: Request, response: Response) =>
+    response.status(200).json({
+      application: 'works!',
+    }),
+  );
+
   await setupRoutes(app);
 
   return app;
