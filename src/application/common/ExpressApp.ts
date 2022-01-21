@@ -1,5 +1,6 @@
 import { setupRoutes } from '@application/helpers/SetupRoutes';
 import express, { Express, NextFunction, Response, Request } from 'express';
+import cors from 'cors';
 import { serverLogger } from './Logger';
 
 const requestLogger = (request: Request, _: Response, next: NextFunction) => {
@@ -15,7 +16,7 @@ export const createExpressApp = async (): Promise<Express> => {
   const app = express();
 
   app.use(express.json());
-
+  app.use(cors());
   app.use(requestLogger);
 
   app.get('/', (request: Request, response: Response) =>

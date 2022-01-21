@@ -19,6 +19,7 @@ export class S3MediaFileUploader implements FileUploader {
         Key: key,
         Body: file.content,
         ContentType: file.mimeType,
+        ACL: 'public-read',
       })
       .promise();
 
