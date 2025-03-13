@@ -38,7 +38,7 @@
     "mongoose": "^6.1.6",
     "multer": "^1.4.4",
     "uuid": "^8.3.2",
-    "winston": "^3.4.0"
+    "winston": "^3.17.0"
   },
   "_moduleAliases": {
     "@domain": "./dist/domain",
