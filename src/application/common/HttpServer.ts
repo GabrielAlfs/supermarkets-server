@@ -3,7 +3,7 @@ import { createExpressApp } from './ExpressApp';
 import { serverLogger } from './Logger';
 
 export class HttpServer {
-  public static server: Server;
+  private static server: Server;
 
   private static readonly port = process.env.SERVER_PORT || process.env.PORT;
 

@@ -1,7 +1,7 @@
 import mongoose, { connect, ConnectOptions } from 'mongoose';
 
 export class MongooseHelper {
-  public static connection: typeof mongoose;
+  private static connection: typeof mongoose;
 
   public static async connect({
     uri,
