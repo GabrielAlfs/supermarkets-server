@@ -22,7 +22,7 @@ export class SuperMarketViewModel {
 
   public updatedAt: string;
 
-  public static map = ({
+  public static readonly map = ({
     id,
     name,
     main_image,
@@ -44,9 +44,8 @@ export class SuperMarketViewModel {
     updatedAt: updated_at.toISOString(),
   });
 
-  public static mapCollection(
+  public static readonly mapCollection = (
     entities: Array<SuperMarketEntity>,
-  ): Array<SuperMarketViewModel> {
-    return entities.map((entity) => SuperMarketViewModel.map(entity));
-  }
+  ): Array<SuperMarketViewModel> =>
+    entities.map((entity) => SuperMarketViewModel.map(entity));
 }

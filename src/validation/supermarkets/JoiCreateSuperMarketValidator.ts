@@ -30,7 +30,7 @@ export class JoiCreateUserValidator extends JoiValidator implements IValidator {
       short_description: this.joi.string().min(5).max(120),
       phone: this.joi
         .string()
-        .regex(/^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}-?[0-9]{4}$/)
+        .regex(/^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])\d{3}-?\d{4}$/)
         .required(),
       number: this.joi.string().max(20),
       street: this.joi.string().max(200).required(),
