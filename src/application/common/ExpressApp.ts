@@ -16,7 +16,13 @@ export const createExpressApp = async (): Promise<Express> => {
   const app = express();
 
   app.use(express.json());
-  app.use(cors());
+  app.use(
+    cors({
+      origin: process.env.CORS_ORIGIN || '*',
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization', 'Origin'],
+    }),
+  );
   app.use(requestLogger);
 
   app.get('/', (request: Request, response: Response) =>

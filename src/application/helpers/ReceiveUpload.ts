@@ -2,7 +2,12 @@ import { File } from '@domain/common/File';
 import { Request, Response, NextFunction } from 'express';
 import multer from 'multer';
 
-const upload = multer();
+const upload = multer({
+  limits: {
+    fileSize: 5 * 1024 * 1024,
+    files: 5,
+  },
+});
 
 const mapFile = (file: Express.Multer.File): File => ({
   content: file.buffer,
@@ -44,9 +49,7 @@ const fileHandler =
           [field.name]:
             field.maxCount === 1
               ? mapFile(files[field.name][0])
-              : (files[field.name] as Array<Express.Multer.File>).map(
-                  (file): File => mapFile(file),
-                ),
+              : files[field.name].map((file): File => mapFile(file)),
         });
       } else if (field.maxCount !== 1) {
         Object.assign(request.body, {
