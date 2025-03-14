@@ -4,7 +4,7 @@ export class S3Connection {
   private client: S3;
 
   constructor(
-    private config: {
+    private readonly config: {
       region: string;
     },
   ) {}

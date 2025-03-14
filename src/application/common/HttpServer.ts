@@ -5,7 +5,7 @@ import { serverLogger } from './Logger';
 export class HttpServer {
   public static server: Server;
 
-  private static port = process.env.SERVER_PORT || process.env.PORT;
+  private static readonly port = process.env.SERVER_PORT || process.env.PORT;
 
   private static async createHttpServer(): Promise<void> {
     const expressApp = await createExpressApp();
